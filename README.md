@@ -55,6 +55,3 @@ Below are some screenshots from the project:
 3. How is the queue structure represented visually?
 4. How does the stack simulation handle push and pop operations?
 5. What animations are used to enhance the user experience?
-
-Happy coding! 🚀
-```
