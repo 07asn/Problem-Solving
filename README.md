@@ -20,6 +20,15 @@
 
 ---
 
+## Questions
+1. How does the binary search visualization work?
+2. What are the key operations implemented for the linked list?
+3. How is the queue structure represented visually?
+4. How does the stack simulation handle push and pop operations?
+5. What animations are used to enhance the user experience?
+
+---
+
 ## Installation & Usage
 ### Clone the Repository
 ```bash
@@ -40,17 +49,4 @@ Below are some screenshots from the project:
 ### 📸 Preview  
 ![Preview](https://drive.google.com/uc?export=view&id=1x2YQGhiy6ulLJFB3drcCgOaTk-uk2KA4)
 
----
 
-## Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
-- **Tools:** Vanilla JS for DOM Manipulation, CSS Animations
-
----
-
-## Questions
-1. How does the binary search visualization work?
-2. What are the key operations implemented for the linked list?
-3. How is the queue structure represented visually?
-4. How does the stack simulation handle push and pop operations?
-5. What animations are used to enhance the user experience?
