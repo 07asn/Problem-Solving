@@ -1,5 +1,6 @@
 # Data Structure Visualization (Binary Search, Linked List, Queue, Stack)
 
+
 ## 🚀 Live URL:
 
 [Live Preview](https://07asn.github.io/Problem-Solving/)
@@ -10,19 +11,6 @@
 - **HTML**
 - **CSS**
 - **JavaScript**
-
-## Features
-- **Binary Search Visualization**  
-  Animates the binary search process on a sorted array.
-
-- **Linked List Operations**  
-  Graphical representation of inserting, deleting, and traversing a linked list.
-
-- **Queue Implementation**  
-  Simulates enqueue and dequeue operations dynamically.
-
-- **Stack Simulation**  
-  Push and pop operations visualized interactively.
 
 ---
 
