@@ -1,4 +1,3 @@
-```markdown
 # Data Structure Visualization (Binary Search, Linked List, Queue, Stack)
 
 ## Technologies Used:
