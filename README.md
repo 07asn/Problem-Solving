@@ -2,12 +2,12 @@
 
 This repository contains JavaScript implementations of various algorithms and data structure manipulations, including Stack, Queue, Recursion, and Linked List operations. Each algorithm is implemented in separate JavaScript files, which you can run by opening the browser console.
 
-## Live :
+## 🚀 Live:
 
 [Live Preview](https://07asn.github.io/Problem-Solving/)
 
 
-## Algorithms Covered:
+## ⭐ Algorithms Covered:
 
 1. **Q1: Reverse an Array Using Stack**
    - This script demonstrates how to reverse an array using a stack data structure.
@@ -29,7 +29,7 @@ This repository contains JavaScript implementations of various algorithms and da
    - This script defines a function to delete the middle node of a linked list and returns the deleted node.
    - The middle node is found using the slow and fast pointer technique, and then it is removed.
 
-## How to Run the Code:
+## 🔴 How to Run the Code:
 
 1. Clone this repository to your local machine:
    ```bash
