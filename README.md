@@ -1,36 +1,60 @@
-# JavaScript Algorithms: Stack, Queue, Recursion, Linked List Operations
+```markdown
+# Data Structure Visualization (Binary Search, Linked List, Queue, Stack)
 
-This repository contains JavaScript implementations of various algorithms and data structure manipulations, including Stack, Queue, Recursion, and Linked List operations. Each algorithm is implemented in separate JavaScript files, which you can run by opening the browser console.
+## Technologies Used:
+- **HTML**
+- **CSS**
+- **JavaScript**
 
-## 🚀 Live:
+## Features
+- **Binary Search Visualization**  
+  Animates the binary search process on a sorted array.
 
-[Live Preview](https://07asn.github.io/Problem-Solving/)
+- **Linked List Operations**  
+  Graphical representation of inserting, deleting, and traversing a linked list.
 
+- **Queue Implementation**  
+  Simulates enqueue and dequeue operations dynamically.
 
-## ⭐ Algorithms Covered:
+- **Stack Simulation**  
+  Push and pop operations visualized interactively.
 
-1. **Q1: Reverse an Array Using Stack**
-   - This script demonstrates how to reverse an array using a stack data structure.
-   - The original array is pushed into a stack, and the elements are popped out to form a reversed array.
+---
 
-2. **Q2: Implement Queue Using Two Stacks**
-   - This script implements a queue data structure using two stacks.
-   - The `enqueue` operation adds elements to one stack, and the `dequeue` operation transfers elements to another stack to mimic the queue behavior.
+## Installation & Usage
+### Clone the Repository
+```bash
+git clone https://github.com/your-username/ds-visualization.git
+```
 
-3. **Q3: Sum of Array Using Recursion**
-   - This script defines a function that calculates the sum of an array of integers using recursion.
-   - The base case stops recursion when the array is empty, and the recursive call adds the current element to the sum of the rest of the array.
+### Open the Project
+Simply open `index.html` in your browser:
+```bash
+start index.html
+```
 
-4. **Q4: Reverse a Linked List**
-   - This script demonstrates how to reverse a linked list.
-   - The `reverse` function iterates through the linked list and reverses the direction of the pointers, effectively reversing the list.
+---
 
-5. **Q5: Delete the Middle Node of a Linked List**
-   - This script defines a function to delete the middle node of a linked list and returns the deleted node.
-   - The middle node is found using the slow and fast pointer technique, and then it is removed.
+## 🖼️ Preview  
+Below are some screenshots from the project:
 
-## 🔴 How to Run the Code:
+### 📸 Preview  
+![Preview](https://drive.google.com/uc?export=view&id=1x2YQGhiy6ulLJFB3drcCgOaTk-uk2KA4)
 
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/07asn/Problem-Solving.git
+---
+
+## Tech Stack
+- **Frontend:** HTML, CSS, JavaScript
+- **Tools:** Vanilla JS for DOM Manipulation, CSS Animations
+
+---
+
+## Questions
+1. How does the binary search visualization work?
+2. What are the key operations implemented for the linked list?
+3. How is the queue structure represented visually?
+4. How does the stack simulation handle push and pop operations?
+5. What animations are used to enhance the user experience?
+
+Happy coding! 🚀
+```

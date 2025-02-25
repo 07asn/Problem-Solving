@@ -4,369 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Structure Visualizations</title>
-    <style>
-        :root {
-            --push-color: #28a745;
-            --pop-color: #dc3545;
-            --search-color: #007bff;
-            --generate-color: #6c757d;
-            --node-color: #17a2b8;
-            --highlight-color: #ffc107;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-        }
-
-        h3 {
-            margin: 0 0 20px 0;
-            font-size: 1.8em;
-            color: var(--highlight-color);
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        input {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.9);
-            font-size: 16px;
-            transition: box-shadow 0.3s;
-        }
-
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
-        }
-
-        button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            color: white;
-        }
-
-        .push-btn { background: var(--push-color); }
-        .pop-btn { background: var(--pop-color); }
-        .search-btn { background: var(--search-color); }
-        .generate-btn { background: var(--generate-color); }
-
-        button:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
-        }
-
-        .structure-container {
-            min-height: 150px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .stack-item, .queue-item {
-            background: var(--node-color);
-            padding: 15px 25px;
-            border-radius: 8px;
-            animation: slideIn 0.4s ease-out;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-        }
-
-        .linked-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .node {
-            background: var(--node-color);
-            padding: 15px 25px;
-            border-radius: 8px;
-            position: relative;
-            animation: scaleUp 0.3s ease-out;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-        }
-
-        .node::after {
-            content: '→';
-            position: absolute;
-            right: -20px;
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .node:last-child::after {
-            content: none;
-        }
-
-        /* Binary Search Styles */
-        .array-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .array-element {
-            background: var(--node-color);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .highlight { background: var(--highlight-color); color: black; }
-        .mid { background: var(--pop-color); }
-        .left-right { background: var(--push-color); }
-
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes scaleUp {
-            from { transform: scale(0); }
-            to { transform: scale(1); }
-        }
-
-        .fade-out {
-            animation: fadeOut 0.4s ease-in forwards;
-        }
-
-        @keyframes fadeOut {
-            to { opacity: 0; transform: translateY(-20px); }
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Data Structure Visualizations</h2>
+    <div class="header">
+        <h1 class="title">Data Structure Visualizations</h1>
+        <p class="subtitle">Interactive visualizations of common data structures and algorithms to help understand their operations and behaviors</p>
+    </div>
 
     <div class="container">
-        <!-- Stack Section -->
-        <div class="section">
-            <h3>Stack (LIFO)</h3>
+        <!------------------------- Stack Section ------------------------->
+        <div class="card">
+            <h3 class="card-title"><i class="fas fa-layer-group"></i> Stack (LIFO)</h3>
+            <p class="subtitle">Last-In-First-Out: Elements are added and removed from the same end</p>
             <div class="input-group">
-                <input type="text" id="stack-input" placeholder="Enter value">
-                <button class="push-btn" onclick="pushStack()">Push</button>
-                <button class="pop-btn" onclick="popStack()">Pop</button>
+                <input type="text" id="stack-input" class="input" placeholder="Enter value">
+                <button class="btn btn-secondary" onclick="stackModule.pushStack()"><i class="fas fa-plus"></i> Push</button>
+                <button class="btn btn-danger" onclick="stackModule.popStack()"><i class="fas fa-minus"></i> Pop</button>
             </div>
-            <div id="stack-container" class="structure-container"></div>
+            <div id="stack-container" class="structure-container stack-container">
+                <div class="empty-text">Stack is empty</div>
+            </div>
         </div>
 
-        <!-- Queue Section -->
-        <div class="section">
-            <h3>Queue (FIFO)</h3>
+        <!------------------------- Queue Section ------------------------->
+        <div class="card">
+            <h3 class="card-title"><i class="fas fa-stream"></i> Queue (FIFO)</h3>
+            <p class="subtitle">First-In-First-Out: Elements are added at one end and removed from the other</p>
             <div class="input-group">
-                <input type="text" id="queue-input" placeholder="Enter value">
-                <button class="push-btn" onclick="enqueue()">Enqueue</button>
-                <button class="pop-btn" onclick="dequeue()">Dequeue</button>
+                <input type="text" id="queue-input" class="input" placeholder="Enter value">
+                <button class="btn btn-secondary" onclick="queueModule.enqueue()"><i class="fas fa-plus"></i> Enqueue</button>
+                <button class="btn btn-danger" onclick="queueModule.dequeue()"><i class="fas fa-minus"></i> Dequeue</button>
             </div>
-            <div id="queue-container" class="structure-container"></div>
+            <div id="queue-container" class="structure-container queue-container">
+                <div class="empty-text">Queue is empty</div>
+            </div>
         </div>
 
-        <!-- Linked List Section -->
-        <div class="section">
-            <h3>Linked List</h3>
+        <!------------------------- Linked List Section ------------------------->
+        <div class="card">
+            <h3 class="card-title"><i class="fas fa-link"></i> Linked List</h3>
+            <p class="subtitle">Chain of nodes where each node contains data and a reference to the next node</p>
             <div class="input-group">
-                <input type="text" id="ll-input" placeholder="Enter value">
-                <button class="push-btn" onclick="insertFront()">Insert Front</button>
-                <button class="push-btn" onclick="insertEnd()">Insert End</button>
-                <button class="pop-btn" onclick="deleteNode()">Delete</button>
+                <input type="text" id="ll-input" class="input" placeholder="Enter value">
+                <button class="btn btn-secondary" onclick="linkedListModule.insertFront()"><i class="fas fa-arrow-left"></i> Insert Front</button>
+                <button class="btn btn-info" onclick="linkedListModule.insertEnd()"><i class="fas fa-arrow-right"></i> Insert End</button>
+                <button class="btn btn-danger" onclick="linkedListModule.deleteNode()"><i class="fas fa-trash"></i> Delete</button>
             </div>
-            <div id="linkedlist-container" class="structure-container linked-list"></div>
+            <div id="linkedlist-container" class="structure-container linked-list">
+                <div class="empty-text">List is empty</div>
+            </div>
         </div>
 
-        <!-- Binary Search Section -->
-        <div class="section">
-            <h3>Binary Search</h3>
+        <!------------------------- Binary Search Section ------------------------->
+        <div class="card">
+            <h3 class="card-title"><i class="fas fa-search"></i> Binary Search</h3>
+            <p class="subtitle">Efficiently finds a target value in a sorted array by repeatedly dividing the search space</p>
             <div class="input-group">
-                <input type="number" id="bs-input" placeholder="Enter target">
-                <button class="generate-btn" onclick="generateArray()">New Array</button>
-                <button class="search-btn" onclick="startSearch()">Search</button>
+                <input type="number" id="bs-input" class="input" placeholder="Enter target number">
+                <button class="btn btn-warning" onclick="binarySearchModule.generateArray()"><i class="fas fa-random"></i> New Array</button>
+                <button class="btn btn-primary" onclick="binarySearchModule.startSearch()"><i class="fas fa-search"></i> Search</button>
             </div>
             <div id="array-container" class="array-container"></div>
-            <div id="bs-status" style="margin-top: 15px;"></div>
+            <div id="bs-status" class="bs-status">Generate an array to begin</div>
         </div>
     </div>
 
-    <script>
-        let stack = [];
-        function pushStack() {
-            const value = document.getElementById('stack-input').value;
-            if (!value) return;
-            
-            stack.push(value);
-            document.getElementById('stack-input').value = '';
-            updateStack();
-        }
-
-        function popStack() {
-            if (!stack.length) return;
-            stack.pop();
-            updateStack();
-        }
-
-        function updateStack() {
-            const container = document.getElementById('stack-container');
-            container.innerHTML = stack.map(value => 
-                `<div class="stack-item">${value}</div>`
-            ).join('');
-        }
-
-        let queue = [];
-        function enqueue() {
-            const value = document.getElementById('queue-input').value;
-            if (!value) return;
-            
-            queue.push(value);
-            document.getElementById('queue-input').value = '';
-            updateQueue();
-        }
-
-        function dequeue() {
-            if (!queue.length) return;
-            queue.shift();
-            updateQueue();
-        }
-
-        function updateQueue() {
-            const container = document.getElementById('queue-container');
-            container.innerHTML = queue.map(value => 
-                `<div class="queue-item">${value}</div>`
-            ).join('');
-        }
-
-        let linkedList = [];
-        function insertFront() {
-            const value = document.getElementById('ll-input').value;
-            if (!value) return;
-            
-            linkedList.unshift(value);
-            document.getElementById('ll-input').value = '';
-            updateLinkedList();
-        }
-
-        function insertEnd() {
-            const value = document.getElementById('ll-input').value;
-            if (!value) return;
-            
-            linkedList.push(value);
-            document.getElementById('ll-input').value = '';
-            updateLinkedList();
-        }
-
-        function deleteNode() {
-            const value = document.getElementById('ll-input').value;
-            const index = linkedList.indexOf(value);
-            if (index > -1) linkedList.splice(index, 1);
-            document.getElementById('ll-input').value = '';
-            updateLinkedList();
-        }
-
-        function updateLinkedList() {
-            const container = document.getElementById('linkedlist-container');
-            container.innerHTML = linkedList.map(value => 
-                `<div class="node">${value}</div>`
-            ).join('');
-        }
-        let array = [];
-        function generateArray() {
-            array = Array.from({length: 15}, () => Math.floor(Math.random() * 100) + 1);
-            array.sort((a, b) => a - b);
-            updateArray();
-        }
-
-        function updateArray() {
-            const container = document.getElementById('array-container');
-            container.innerHTML = array.map(num => 
-                `<div class="array-element">${num}</div>`
-            ).join('');
-        }
-
-        async function startSearch() {
-            const target = parseInt(document.getElementById('bs-input').value);
-            if (isNaN(target)) return;
-
-            let low = 0, high = array.length - 1;
-            const elements = document.getElementsByClassName('array-element');
-            
-            while (low <= high) {
-                const mid = Math.floor((low + high) / 2);
-                
-                elements[mid].classList.add('mid');
-                for (let i = low; i <= high; i++) {
-                    elements[i].classList.add('highlight');
-                }
-                
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                if (array[mid] === target) {
-                    elements[mid].classList.add('mid');
-                    document.getElementById('bs-status').textContent = `Found at index ${mid}`;
-                    return;
-                } else if (array[mid] < target) {
-                    low = mid + 1;
-                } else {
-                    high = mid - 1;
-                }
-                
-                Array.from(elements).forEach(el => {
-                    el.classList.remove('highlight', 'mid');
-                });
-            }
-            
-            document.getElementById('bs-status').textContent = 'Value not found';
-        }
-        generateArray();
-    </script>
+    <!------------------------- Scripts ------------------------->
+    <script src="js/stack.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/linkedlist.js"></script>
+    <script src="js/binarysearch.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
