@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .console-prompt {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .arrow {
+            font-size: 30px;
+            color: #ff6347;
+        }
+        .instructions {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+        .arrow-container {
+            margin-top: 40px;
+        }
+        .arrow-container i {
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="console-prompt">
+        <p>👋 Hey there! To see the results, please open your browser's console!</p>
+    </div>
+    
+    <div class="arrow-container">
+        <i class="arrow">➡️</i>
+    </div>
+
+    <div class="instructions">
+        <p>To open the console: Right-click → Inspect → Console tab (or press F12).</p>
+    </div>
+
+    <script type="module" src="Q1.js"></script>
+    <script type="module" src="Q2.js"></script>
+    <script type="module" src="Q3.js"></script>
+    <script type="module" src="Q4.js"></script>
+    <script type="module" src="Q5.js"></script>
+</body>
+</html>
